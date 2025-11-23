@@ -23,6 +23,7 @@
 
 
 #include <stdlib.h>
+#include <stdint.h>
 
 
 #include "m_bbox.h"
@@ -846,7 +847,7 @@ static void InterceptsOverrun(int num_intercepts, intercept_t *intercept)
 
     InterceptsMemoryOverrun(location, intercept->frac);
     InterceptsMemoryOverrun(location + 4, intercept->isaline);
-    InterceptsMemoryOverrun(location + 8, (int) intercept->d.thing);
+    InterceptsMemoryOverrun(location + 8, (intptr_t) intercept->d.thing);
 }
 
 
